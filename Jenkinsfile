@@ -1,12 +1,6 @@
-pipeline {
-    agent { 
-        label 'jenkins-agent'
-    }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'python3 --version'
-            }
-        }
-    }
+node('jenkins-agent')
+{
+    python.checkoutCode()
+    python.poetryInstall()
+    python.pytestRun()
 }
