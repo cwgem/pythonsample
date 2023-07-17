@@ -1,6 +1,4 @@
-node('jenkins-agent')
+node('node')
 {
-    python.checkoutCode()
-    python.poetryInstall()
-    python.pytestRun()
+    sh 'echo Hello'
 }
